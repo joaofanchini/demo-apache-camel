@@ -1,6 +1,5 @@
 package br.com.apache_camel.Demo.routes;
 
-import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 

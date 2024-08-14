@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener;
 
 @CamelSpringBootTest
 @SpringBootTest
@@ -32,7 +31,7 @@ public class LogRouteTest {
 
     @Test
     public void testLogRoute() throws Exception {
-        AdviceWith.adviceWith(camelContext, LogOutRoute.LOG_OUT, c->c.weaveAddFirst().to(mockResult));
+        AdviceWith.adviceWith(camelContext, LogOutRoute.LOG_OUT, c -> c.weaveAddFirst().to(mockResult));
 
         // Configurar o MockEndpoint
         mockResult.expectedMessageCount(1);
@@ -49,7 +48,7 @@ public class LogRouteTest {
 
     @Test
     public void testLogRoute2() throws Exception {
-        AdviceWith.adviceWith(camelContext, LogOutRoute.LOG_OUT, c->c.weaveAddFirst().to(mockResult));
+        AdviceWith.adviceWith(camelContext, LogOutRoute.LOG_OUT, c -> c.weaveAddFirst().to(mockResult));
 
         // Configurar o MockEndpoint
         mockResult.expectedMessageCount(1);
