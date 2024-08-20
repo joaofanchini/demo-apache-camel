@@ -1,6 +1,5 @@
 package br.com.apache_camel.Demo;
 
-import br.com.apache_camel.Demo.routes.LogOutRoute;
 import br.com.apache_camel.Demo.routes.LogRoute;
 import org.apache.camel.CamelContext;
 import org.apache.camel.EndpointInject;
@@ -31,7 +30,7 @@ public class LogRouteTest {
 
     @Test
     public void testLogRoute() throws Exception {
-        AdviceWith.adviceWith(camelContext, LogOutRoute.LOG_OUT, c -> c.weaveAddFirst().to(mockResult));
+        AdviceWith.adviceWith(camelContext, LogRoute.LOG_OUT, c -> c.weaveAddFirst().to(mockResult));
 
         // Configurar o MockEndpoint
         mockResult.expectedMessageCount(1);
@@ -48,7 +47,7 @@ public class LogRouteTest {
 
     @Test
     public void testLogRoute2() throws Exception {
-        AdviceWith.adviceWith(camelContext, LogOutRoute.LOG_OUT, c -> c.weaveAddFirst().to(mockResult));
+        AdviceWith.adviceWith(camelContext, LogRoute.LOG_OUT, c -> c.weaveAddFirst().to(mockResult));
 
         // Configurar o MockEndpoint
         mockResult.expectedMessageCount(1);

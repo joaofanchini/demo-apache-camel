@@ -20,5 +20,11 @@ public class LogRest extends RouteBuilder {
                 .type(LogRequest.class)
                 .consumes("application/json")
                 .to(LogRoute.LOG_IN);
+
+        rest("/service")
+                .get()
+                .routeId("service-log")
+                .produces("application/json")
+                .to(ServiceRoute.SERVICE);
     }
 }
